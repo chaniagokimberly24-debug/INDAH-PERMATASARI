@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deskWood: #8D5B3C;
+  --color-deskWoodDark: #5E3821;
+  --color-cuttingMat: #1565C0;
+  --color-cuttingMatDark: #0D47A1;
+  --color-paperWhite: #FAF9F6;
+  --color-postItYellow: #FEF08A;
+  --color-badgeYellow: #FACC15;
+  --color-hotPink: #EC4899;
+  --color-vibrantBlue: #2563EB;
+  --color-boardCard: #C8A27C;
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-handwriting: "Caveat", cursive;
+}
+
+/* Blueprint & 32px cutting mat grid pattern with 8px millimeter graduations */
+.bg-mat-grid {
+  background-color: #1565C0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 8px 8px, 8px 8px;
+}
+
+.mat-radial-glow {
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(13, 71, 161, 0.4) 75%,
+    rgba(10, 40, 95, 0.85) 100%
+  );
+}
+
+/* Subtle 16px light blue notebook graph lines */
+.bg-notebook-graph {
+  background-color: #FCFBF7;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.09) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.bg-lined-paper {
+  background-color: #FFFDF9;
+  background-image: repeating-linear-gradient(transparent, transparent 23px, #93C5FD 24px);
+}
+
+/* Tactile shadow presets */
+.shadow-tactile {
+  box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.45), 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-paper {
+  box-shadow: 0 12px 28px -6px rgba(13, 71, 161, 0.4), 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.shadow-clip {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.shadow-badge {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+}
+
+/* Torn zig-zag notebook edge simulation */
+.torn-bottom-edge {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% calc(100% - 10px),
+    98% 100%, 96% calc(100% - 8px), 94% 100%, 92% calc(100% - 7px), 90% 100%,
+    88% calc(100% - 9px), 86% 100%, 84% calc(100% - 6px), 82% 100%, 80% calc(100% - 9px),
+    78% 100%, 76% calc(100% - 8px), 74% 100%, 72% calc(100% - 7px), 70% 100%,
+    68% calc(100% - 9px), 66% 100%, 64% calc(100% - 8px), 62% 100%, 60% calc(100% - 7px),
+    58% 100%, 56% calc(100% - 8px), 54% 100%, 52% calc(100% - 7px), 50% 100%,
+    48% calc(100% - 9px), 46% 100%, 44% calc(100% - 6px), 42% 100%, 40% calc(100% - 8px),
+    38% 100%, 36% calc(100% - 7px), 34% 100%, 32% calc(100% - 9px), 30% 100%,
+    28% calc(100% - 6px), 26% 100%, 24% calc(100% - 8px), 22% 100%, 20% calc(100% - 7px),
+    18% 100%, 16% calc(100% - 8px), 14% 100%, 12% calc(100% - 6px), 10% 100%,
+    8% calc(100% - 8px), 6% 100%, 4% calc(100% - 7px), 2% 100%, 0% calc(100% - 10px)
+  );
+}
+
+/* Die-cut white border sticker appearance */
+.die-cut-sticker {
+  filter: drop-shadow(0 6px 0px #1E3A8A) drop-shadow(0 14px 18px rgba(0, 0, 0, 0.35));
+}
+
+.sticker-stroke {
+  -webkit-text-stroke: 10px #FFFFFF;
+  paint-order: stroke fill;
+}
+
+.sticker-stroke-thin {
+  -webkit-text-stroke: 5px #FFFFFF;
+  paint-order: stroke fill;
+}
+
+/* 3D mouse cursor clip-path */
+.clip-cursor {
+  clip-path: polygon(0% 0%, 100% 42%, 56% 56%, 42% 100%);
+}
+
+/* Kawaii Wiggle / Jiggle Keyframes */
+@keyframes kawaii-wiggle {
+  0% { transform: scale(1.12) rotate(0deg); }
+  25% { transform: scale(1.15) rotate(-6deg); }
+  50% { transform: scale(1.12) rotate(5deg); }
+  75% { transform: scale(1.15) rotate(-4deg); }
+  100% { transform: scale(1.12) rotate(0deg); }
+}
+
+.kawaii-sticker {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+  will-change: transform;
+}
+
+.kawaii-sticker:hover {
+  animation: kawaii-wiggle 0.35s ease-in-out infinite;
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.45)) drop-shadow(0 4px 10px rgba(236, 72, 153, 0.35));
+  z-index: 50;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kawaii-sticker:hover {
+    animation: none;
+    transform: scale(1.05);
+  }
+}

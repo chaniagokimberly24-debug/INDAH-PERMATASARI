@@ -1,0 +1,8 @@
+{
+  "name": "Indah Permatasari — Tactile Studio Portfolio",
+  "description": "Tactile 3D studio desk portfolio for Indah Permatasari (IT · PLN 2026) featuring a self-healing drafting cutting mat, spiral notebook sheets, interactive project dossiers, and kawaii stationery props.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
